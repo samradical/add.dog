@@ -23,7 +23,7 @@ const CSS_LOADERS = {
 
 const ENV_VARS = {
   APP_HOST: '"https://rad.wtf/"',
-  APP_DOMAIN: '"/"',
+  APP_DOMAIN: '"/webgl/"',
   ASSETS_DIR: '"https://storage.googleapis.com/samrad-webgl/www-assets/"',
   REMOTE_ASSETS_DIR: '"https://storage.googleapis.com/samrad-webgl/www-assets/"'
 }

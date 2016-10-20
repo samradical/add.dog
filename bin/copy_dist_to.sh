@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cp -r dist ../_sites/mars.wtf/www
+cp -r dist ../_rad.wtf/_webgl/www
