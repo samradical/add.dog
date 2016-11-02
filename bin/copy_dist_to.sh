@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cp -r dist ../_rad.wtf/_webgl/www
+cp -r dist ../_rad.wtf/_index
