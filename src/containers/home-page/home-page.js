@@ -37,8 +37,8 @@ class HomePage extends Component {
     }
   }
 
-  componentWillReceiveProps(props) {
-    const { projects } = props;
+  _generatePage(props) {
+   const { projects } = props;
     let _covers = []
     let _onClick = this.onProjectClick
 
@@ -58,45 +58,14 @@ class HomePage extends Component {
     })
   }
 
+
+  componentWillReceiveProps(props) {
+    this._generatePage(props)
+  }
+
   componentDidMount() {
     this.onProjectClick = this._onProjectClick.bind(this)
-      /*const { add } = this.props;
-
-      let _url = `${process.env.API_HOST}hget`
-      let _j = xhrJson(_url, {
-          method: 'post',
-          body: { key: 'tumblr:a3dddog:posts', }
-        })
-        .then(data => {
-          let _parsed = RedisParser.posts(data)
-          let _projects = RedisParser.getProjects(_parsed)
-
-          add(_projects)
-            //let json  = JSON.parse(data)
-          let _covers = []
-          let _onClick = this._onProjectClick.bind(this)
-          forIn(_projects, (projectData, name) => {
-
-            let _props = assign({},
-                projectData['home'][0], {
-                  onClick: _onClick,
-                  projectName: name
-                })
-              //home page tag, first post
-            _covers.push(Project(_props))
-          })
-
-          this.setState({
-            projects: _covers
-          })
-        })*/
-
-    /*let _url2 = `${process.env.REMOTE_ASSETS_DIR}copy.json?z=${Math.random()}`
-    let _j2 = fetchJson(_url2).then(data => {
-      this.setState({
-        copy: data
-      })
-    })*/
+    this._generatePage(this.props)
   }
 
   _onProjectClick(projectProps) {

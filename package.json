@@ -1,4 +1,10 @@
 {
+  "author": {
+    "name": "Sam Elie",
+    "email": "samradelie@gmail.com",
+    "url": "https://github.com/samelie"
+  },
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@samelie/deriveur": "*",
