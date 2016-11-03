@@ -15,6 +15,10 @@ import {
 import configureStore from './store/configure-store';
 import configureRoutes from './routes/configure-routes';
 
+import { xhrJson } from './utils/fetch';
+import { forIn, assign } from 'lodash';
+import RedisParser from '@samelie/tumblr-redis-parser';
+
 import FastClick from 'fastclick';
 FastClick.attach(document.body);
 
@@ -30,19 +34,34 @@ const histroy = syncHistoryWithStore(browserHistory, store);
 const routes = configureRoutes();
 
 
-window.addEventListener('resize', ()=>{
+window.addEventListener('resize', () => {
   store.dispatch({
-    type:RESIZE,
-    payload:{width:window.innerWidth, height:window.innerHeight}
+    type: RESIZE,
+    payload: { width: window.innerWidth, height: window.innerHeight }
   })
 })
 
-window.addEventListener("orientationchange",  () =>{
+window.addEventListener("orientationchange", () => {
   store.dispatch({
-    type:ORIENTATION_CHANGE,
-    payload:window.orientation
+    type: ORIENTATION_CHANGE,
+    payload: window.orientation
   })
 });
+
+let _url = `${process.env.API_HOST}hget`
+let _j = xhrJson(_url, {
+    method: 'post',
+    body: { key: 'tumblr:a3dddog:posts', }
+  })
+  .then(data => {
+    let _parsed = RedisParser.posts(data)
+    let _projects = RedisParser.getProjects(_parsed)
+    console.log(_projects);
+    store.dispatch({
+      type: 'PROJECTS_ADD',
+      payload: _projects
+    })
+  })
 
 ReactDom.render(
   <Provider store={store}>

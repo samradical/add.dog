@@ -3,14 +3,25 @@
 @import 'fonts';
 @import 'easings';
 .home {
-    color: $c-grey;
+    color: $c-grey-dark;
     padding: 20px;
+
+    &__adddog{
+      margin-bottom: 20px;
+    }
+
     &__title {
         position: relative;
-        margin-left: 20px;
-        font-size: 22px;
-        color: $c-grey-light;
+        font-weight: bold;
+        margin: 0;
+        color:$c-black;
+        font-size: $fs-title;
         letter-spacing: 2px;
+    }
+    &__title--sub {
+      margin: 0;
+      color:$c-grey-dark;
+      font-size: $fs-desc;
     }
     &__desc {
         font-size: 12px;
@@ -42,14 +53,13 @@
     width: 100%;
     height: 100%;
 }
+
 .project {
     position: relative;
+    display: flex;
+    padding-bottom: 20px;
+    cursor: pointer;
     /*size of image*/
-    width: 300px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    margin-left: 20px;
-    padding:20px;
     &__title {
       font-size: $fs-title;
     }
@@ -60,6 +70,24 @@
       font-size: $fs-desc;
       a{
         color: white;
+      }
+    }
+
+    &__body{
+      position: relative;
+      max-width: 540px;
+      p{
+        margin: 0;
+        max-width: 100%;
+      }
+      figure{
+        margin: 0;
+      }
+
+      &:hover{
+        p{
+          text-decoration: underline;
+        }
       }
     }
 }

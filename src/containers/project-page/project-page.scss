@@ -1,0 +1,63 @@
+@import 'fonts';
+.projects {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    .post {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        //tumblr
+        &__text {
+            font-size: $fs-desc;
+            iframe {
+                margin: 0;
+                border: 0;
+            }
+        }
+        &__photo {
+          padding-bottom: 20px;
+        }
+        &__video {
+            video {}
+        }
+        &__body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        /*
+        Specifics
+         */
+        &__photo--wrapper {
+            width: 100%;
+            img {
+                max-width: 100%;
+            }
+        }
+
+        &__photo--caption{
+          font-size: $fs-desc;
+          p{
+            margin: 0
+          }
+        }
+
+        /*
+        TYPES
+         */
+        &__basic {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        &__title {
+            font-size: $fs-title;
+            font-weight: bold;
+        }
+    }
+}
