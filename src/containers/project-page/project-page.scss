@@ -10,6 +10,9 @@
         justify-content: center;
         align-items: center;
         width: 100%;
+        //video width
+        max-width: 500px;
+        padding-bottom:20px;
         //tumblr
         &__text {
             font-size: $fs-desc;
@@ -41,8 +44,9 @@
             }
         }
 
+        &__video--caption,
         &__photo--caption{
-          font-size: $fs-desc;
+          font-size: $fs-desc--small;
           p{
             margin: 0
           }

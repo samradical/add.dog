@@ -83,7 +83,7 @@ class HomePage extends Component {
         <div className="o-page home">
           <div className="home__adddog">
             <h1 className="home__title"><i>ADddog</i></h1>
-            <p className="home__text home__title--sub">Digital data transformations.</p>
+            <p className="home__text home__title--sub"></p>
           </div>
           {this.state.projects}
         </div>

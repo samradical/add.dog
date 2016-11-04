@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cp -r dist ../_rad.wtf/_index
+cp -r dist ../_sites/add.dog/www/

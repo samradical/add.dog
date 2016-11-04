@@ -24,7 +24,8 @@ const CSS_LOADERS = {
 const ENV_VARS = {
   APP_HOST: '"https://rad.wtf/"',
   APP_DOMAIN: '"/"',
-  API_HOST: '"http://127.0.0.1:6380/"',
+  //API_HOST: '"http://127.0.0.1:6380/"',
+  API_HOST: '"https://rad.wtf/redis/"',
   ASSETS_DIR: '"https://storage.googleapis.com/samrad-webgl/www-assets/"',
   REMOTE_ASSETS_DIR: '"https://storage.googleapis.com/samrad-webgl/www-assets/"'
 }
@@ -65,6 +66,7 @@ module.exports = env => {
     output: {
       filename: 'bundle.[name].[chunkhash].js',
       path: constants.DIST,
+      publicPath:"/",
       pathinfo: !env.prod,
     },
     context: constants.SRC_DIR,

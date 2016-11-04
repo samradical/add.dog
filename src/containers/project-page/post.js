@@ -39,7 +39,12 @@ const POST = (props) => {
     case 'video':
     let _str = props.player[2].embed_code
     _str = _str.replace('<video', '<video controls autoplay ')
-    _html = _generateMarkUp(_str, true)
+    _html = (
+      <div className="post__video--wrapper">
+        {_generateMarkUp(_str, true)}
+        <div className="post__body  post__text post__video--caption">{ReactHtmlParser(props.summary)}</div>
+      </div>
+      )
     break;
     default:
     _html = _generateMarkUp(props.body,true)

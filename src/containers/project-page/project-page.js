@@ -54,6 +54,9 @@ class ProjectPage extends Component {
     const { projects } = props.projects;
 
     const { projectName } = this.state
+    if(!projects[projectName]){
+      return
+    }
     const _posts = projects[projectName].projects
     let _covers = []
 
